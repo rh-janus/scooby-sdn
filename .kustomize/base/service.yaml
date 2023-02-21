@@ -1,0 +1,17 @@
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app.kubernetes.io/name: scooby-sdn
+    name: scooby-sdn
+  spec:
+    ports:
+      - name: http
+        port: 80
+        protocol: TCP
+        targetPort: 8080
+    selector:
+      app.kubernetes.io/name: scooby-sdn
+    type: ClusterIP
+  
